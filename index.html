@@ -12,6 +12,9 @@
   --text:#1a1a1a;
   --soft:#f3f2ee;
 }
+  html {
+  scroll-behavior: smooth;
+}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
 nav{padding:20px 8%;display:flex;justify-content:space-between;align-items:center;background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
@@ -85,7 +88,7 @@ width:100%;max-width:400px;margin:10px auto;padding:12px;border:1px solid #ccc;d
     <div class="card"><h3>03. Furniture</h3><p>Each piece becomes a refined table.</p></div>
   </div>
 </section>
-<section class="gallery">
+<section class="gallery" id="collection">
   <h2 class="section-title">Featured Tables</h2>
   <div class="gallery-grid">
     <div class="gallery-item"><img src="data:image/svg+xml;utf8,
