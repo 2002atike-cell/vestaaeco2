@@ -1,38 +1,4 @@
 <!DOCTYPE html>
-<style>
-.gallery-grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  padding: 20px 0;
-}
-
-.gallery-item {
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.gallery-item:hover {
-  transform: translateY(-5px);
-}
-
-.gallery-item p {
-  margin-top: 15px;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-</style>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -46,7 +12,7 @@
   --text:#1a1a1a;
   --soft:#f3f2ee;
 }
-  html {
+html {
   scroll-behavior: smooth;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -61,27 +27,67 @@ nav{padding:20px 8%;display:flex;justify-content:space-between;align-items:cente
 .hero-image{flex:1;min-width:320px;}
 .hero-image img{width:100%;max-width:580px;border-radius:14px;display:block;box-shadow:0 20px 50px rgba(0,0,0,0.12);object-fit:cover;background:#efe9de;}
 .section-title{text-align:center;font-family:'Playfair Display',serif;font-size:2.3rem;margin-bottom:40px;}
+
+/* Süreç Bölümü */
 .process{background:var(--soft);padding:90px 8%;}
 .process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
 .card{background:#fff;border-radius:12px;padding:30px;box-shadow:0 8px 25px rgba(0,0,0,0.05);}
 .card h3{color:var(--primary);margin-bottom:12px;font-size:1.2rem;}
-.gallery{padding:90px 8%;}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
-.gallery-item{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.06);}
-.gallery-item img{width:100%;height:260px;object-fit:cover;background:#f3eee5;}
-.gallery-item p{padding:16px;font-weight:600;color:#333;}
-footer{padding:30px 8%;text-align:center;background:#fff;color:#666;border-top:1px solid #eee;}
-@media (max-width:768px){.hero{text-align:center;padding-top:40px;}.hero-content h1{font-size:2.4rem;}}
 
+/* Galeri Tasarımı */
+.gallery{padding:90px 8%;}
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+.gallery-item {
+  width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #f3eee5;
+  display: block;
+}
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+.gallery-item p {
+  padding: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.gallery-item a {
+  display: block;
+  text-decoration: none;
+}
+
+/* İletişim Bölümü */
 .contact{padding:90px 8%;background:var(--soft);text-align:center;}
 .contact input,.contact textarea{
 width:100%;max-width:400px;margin:10px auto;padding:12px;border:1px solid #ccc;display:block;}
-.contact button{padding:12px 24px;background:var(--primary);color:#fff;border:none;margin-top:10px;}
+.contact button{padding:12px 24px;background:var(--primary);color:#fff;border:none;margin-top:10px;cursor:pointer;border-radius:4px;}
 
+footer{padding:30px 8%;text-align:center;background:#fff;color:#666;border-top:1px solid #eee;}
+@media (max-width:768px){.hero{text-align:center;padding-top:40px;}.hero-content h1{font-size:2.4rem;}.gallery-grid{justify-content:center;}}
 </style>
 </head>
 <body>
+
 <nav><a href="#" class="logo">VESTAECO</a></nav>
+
 <section class="hero">
   <div class="hero-content">
     <h1>Furniture from Waste. Designed for Living.</h1>
@@ -114,11 +120,16 @@ width:100%;max-width:400px;margin:10px auto;padding:12px;border:1px solid #ccc;d
 " alt="Vestaeco table hero image">
   </div>
 </section>
+
 <section class="process">
   <h2 class="section-title">From Waste to Living</h2>
   <div class="process-grid">
     <div class="card"><h3>01. Collection</h3><p>Discarded textiles are gathered and sorted.</p></div>
     <div class="card"><h3>02. Transformation</h3><p>Fibers are compressed into durable surfaces.</p></div>
+    <div class="card"><h3>03. Furniture</h3><p>Each piece becomes a refined table.</p></div>
+  </div>
+</section>
+
 <section class="gallery" id="collection">
   <h2 class="section-title">Featured Tables</h2>
   <div class="gallery-grid">
@@ -146,17 +157,6 @@ width:100%;max-width:400px;margin:10px auto;padding:12px;border:1px solid #ccc;d
 
   </div>
 </section>
-      <a href="data:image/svg+xml;utf8,%0A%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20800%20600%27%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%27600%27%20fill%3D%27%23f6f2eb%27/%3E%0A%20%20%3Cellipse%20cx%3D%27400%27%20cy%3D%27520%27%20rx%3D%27235%27%20ry%3D%2730%27%20fill%3D%27%23d7cfbe%27/%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20x%3D%27220%27%20y%3D%27205%27%20width%3D%27360%27%20height%3D%2748%27%20rx%3D%2724%27%20fill%3D%27%23d8be9e%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27235%27%20y%3D%27225%27%20width%3D%27330%27%20height%3D%2748%27%20rx%3D%2724%27%20fill%3D%27%23b69472%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M290%20272%20L320%20272%20L290%20500%20L260%20500%20Z%27%20fill%3D%27%236c5647%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M510%20272%20L540%20272%20L570%20500%20L540%20500%20Z%27%20fill%3D%27%236c5647%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M375%20272%20L405%20272%20L392%20500%20L362%20500%20Z%27%20fill%3D%27%237a6352%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M425%20272%20L455%20272%20L468%20500%20L438%20500%20Z%27%20fill%3D%27%237a6352%27/%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E%0A" target="_blank">
-        <img src="data:image/svg+xml;utf8,%0A%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20800%20600%27%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%27600%27%20fill%3D%27%23f6f2eb%27/%3E%0A%20%20%3Cellipse%20cx%3D%27400%27%20cy%3D%27520%27%20rx%3D%27235%27%20ry%3D%2730%27%20fill%3D%27%23d7cfbe%27/%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20x%3D%27220%27%20y%3D%27205%27%20width%3D%27360%27%20height%3D%2748%27%20rx%3D%2724%27%20fill%3D%27%23d8be9e%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27235%27%20y%3D%27225%27%20width%3D%27330%27%20height%3D%2748%27%20rx%3D%2724%27%20fill%3D%27%23b69472%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M290%20272%20L320%20272%20L290%20500%20L260%20500%20Z%27%20fill%3D%27%236c5647%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M510%20272%20L540%20272%20L570%20500%20L540%20500%20Z%27%20fill%3D%27%236c5647%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M375%20272%20L405%20272%20L392%20500%20L362%20500%20Z%27%20fill%3D%27%237a6352%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M425%20272%20L455%20272%20L468%20500%20L438%20500%20Z%27%20fill%3D%27%237a6352%27/%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E%0A" alt="Statement table">
-      </a>
-      <p>Statement Table</p>
-    </div>
-
-  </div>
-</section>
-    <div class="gallery-item"><img src="data:image/svg+xml;utf8,%0A%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20800%20600%27%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%27600%27%20fill%3D%27%23f6f2eb%27/%3E%0A%20%20%3Cellipse%20cx%3D%27400%27%20cy%3D%27520%27%20rx%3D%27235%27%20ry%3D%2730%27%20fill%3D%27%23d7cfbe%27/%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20x%3D%27220%27%20y%3D%27205%27%20width%3D%27360%27%20height%3D%2748%27%20rx%3D%2724%27%20fill%3D%27%23d8be9e%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27235%27%20y%3D%27225%27%20width%3D%27330%27%20height%3D%2748%27%20rx%3D%2724%27%20fill%3D%27%23b69472%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M290%20272%20L320%20272%20L290%20500%20L260%20500%20Z%27%20fill%3D%27%236c5647%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M510%20272%20L540%20272%20L570%20500%20L540%20500%20Z%27%20fill%3D%27%236c5647%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M375%20272%20L405%20272%20L392%20500%20L362%20500%20Z%27%20fill%3D%27%237a6352%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M425%20272%20L455%20272%20L468%20500%20L438%20500%20Z%27%20fill%3D%27%237a6352%27/%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E%0A" alt="Statement table"><p>Statement Table</p></div>
-  </div>
-</section>
 
 <section class="contact">
   <h2 class="section-title">Contact</h2>
@@ -169,5 +169,6 @@ width:100%;max-width:400px;margin:10px auto;padding:12px;border:1px solid #ccc;d
 </section>
 
 <footer>© 2026 Vestaeco — Circular Furniture</footer>
+
 </body>
 </html>
